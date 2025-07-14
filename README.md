@@ -33,6 +33,14 @@ pip install -r requirements.txt
    python generate_plans.py
    ```
 
+## 待办事项
+- [x] 使用deepseek作为LLM模型
+- [x] 图片像素坐标转换经纬度
+- [ ] 经纬度自动下载卫星图
+- [ ] 微调VLM模型
+- [ ] 训练一个计算机视觉模型分割建筑物
+- [ ] 微调模型使其能分割建筑物的类别
+
 ## 其他问题
 
 请咨询@luojin666
