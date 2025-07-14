@@ -204,23 +204,26 @@ class Downloader(Thread):
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36'}
         header = ur.Request(url, headers=HEADERS)
         err = 0
-        while (err < 3):
+        while err < 5:  # Increased retry attempts
             try:
                 data = ur.urlopen(header).read()
-            except:
-                err += 1
-            else:
                 return data
-        raise Exception("Bad network link.")
+            except Exception as e:
+                print(f"Error downloading tile: {url}, attempt {err + 1}: {e}")
+                err += 1
+        raise Exception(f"Failed to download tile: {url} after 5 retries.")
 
     def run(self):
         for i, url in enumerate(self.urls):
             if i % self.count != self.index:
                 continue
-            self.datas[i] = self.download(url)
-            if mutex.acquire():
-                self.update()
-                mutex.release()
+            try:
+                self.datas[i] = self.download(url)
+                if mutex.acquire():
+                    self.update()
+                    mutex.release()
+            except Exception as e:
+                print(f"Failed to download tile {url}: {e}")
 
 
 def geturl(source, x, y, z, style):
@@ -268,13 +271,17 @@ def downpics(urls, multi=10):
     url_len = len(urls)
     datas = [None] * url_len
     if multi < 1 or multi > 20 or not isinstance(multi, int):
-        raise Exception("multi of Downloader shuold be int and between 1 to 20.")
+        raise Exception("multi of Downloader should be int and between 1 to 20.")
     tasks = [Downloader(i, multi, urls, datas, makeupdate(url_len)) for i in range(multi)]
     for i in tasks:
         i.start()
     for i in tasks:
         i.join()
 
+    # Check if any tile failed to download
+    for i, data in enumerate(datas):
+        if data is None:
+            print(f"Warning: Tile {i} failed to download.")
     return datas
 
 
@@ -296,15 +303,20 @@ def getpic(x1, y1, x2, y2, z, source='google', outfile="MAP_OUT.png", style='s')
     print("\nDownload Finished！ Pics Mergeing......")
     outpic = pil.new('RGBA', (lenx * 256, leny * 256))
     for i, data in enumerate(datas):
+        if data is None:
+            print(f"Skipping tile {i} as it failed to download.")
+            continue  # Skip this tile if it's missing
         picio = io.BytesIO(data)
         small_pic = pil.open(picio)
-
         y, x = i // lenx, i % lenx
         outpic.paste(small_pic, (x * 256, y * 256))
 
-    print('Pics Merged！ Exporting......')
-    outpic.save(outfile)
-    print('Exported to file！')
+    try:
+        print('Pics Merged！ Exporting......')
+        outpic.save(outfile)
+        print('Exported to file！')
+    except Exception as e:
+        print(f"Failed to save the image: {e}")
     return {"LT": (pos1x, pos1y), "RT": (pos2x, pos1y), "LB": (pos1x, pos2y), "RB": (pos2x, pos2y), "z": z}
 
 
@@ -343,16 +355,18 @@ def file_out(zb, file, target="keep", output="file"):
         raise Exception("Invalid argument: target.")
 
     if output == "file":
-        f = open(file, "w")
-        for i in ["LT", "LB", "RT", "RB"]:
-            f.write("{0[0]:.5f}, {0[1]:.5f}, {1[0]:.5f}, {1[1]:.5f}\n".format(pixframe[i], Xframe[i]))
-        f.close()
-        print("Exported link file to ", file)
+        try:
+            with open(file, "w") as f:
+                for i in ["LT", "LB", "RT", "RB"]:
+                    f.write("{0[0]:.5f}, {0[1]:.5f}, {1[0]:.5f}, {1[1]:.5f}\n".format(pixframe[i], Xframe[i]))
+            print("Exported link file to ", file)
+        except Exception as e:
+            print(f"Failed to write to file: {e}")
     else:
         screen_out(Xframe, target)
 
 
 if __name__ == '__main__':
-    x = getpic(109.27305, 32.869698, 109.30000, 32.860000,
-               17, source='amap', style='s', outfile="map.png")
+    x = getpic(120.5, 30.7, 120.6, 30.6,
+               17, source='amap', style='s', outfile="./map.png")
     file_out(x, "zb17.txt", "wgs")

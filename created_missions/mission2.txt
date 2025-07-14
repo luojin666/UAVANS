@@ -1,37 +1,39 @@
-Here's a flight plan in pseudo-language for the quadcopter to fly around each building at 100m and return to the take-off point (assuming the first point is the home location):
+Here's a flight plan in pseudo-language for the quadcopter to fly around each building at 100m and return to the take-off point:
 
 ```
+// Arm and take off to 100m
 arm throttle
 takeoff 100
 
-// Fly to and circle each building at 100m height
-mode guided(43.02270766944444, -85.78668121666666, 100)
+// Fly to and circle each building in sequence
+mode guided(43.025370627777775, -85.78686182222222, 100)  // building_1
 mode circle
-mode guided(43.02162900277778, -85.7864816, 100)
+mode guided(43.02458185277778, -85.78668121666666, 100)   // building_2
 mode circle
-mode guided(43.02377959444444, -85.78496071111111, 100)
+mode guided(43.02274137777778, -85.78668121666666, 100)   // building_3
 mode circle
-mode guided(43.025100961111114, -85.78487516111112, 100)
+mode guided(43.02166271111111, -85.7864816, 100)          // building_4
 mode circle
-mode guided(43.021595294444445, -85.78467554444444, 100)
+mode guided(43.02382004444444, -85.78486565555555, 100)   // building_5
 mode circle
-mode guided(43.02260654444444, -85.78458048888889, 100)
+mode guided(43.02154810277778, -85.78478010555555, 100)   // building_6
 mode circle
-mode guided(43.02191215277777, -85.78258432222222, 100)
+mode guided(43.02523579444445, -85.7847515888889, 100)     // building_7
 mode circle
-mode guided(43.02326048611111, -85.7822041, 100)
+mode guided(43.02260654444444, -85.78439988333334, 100)    // building_8
+mode circle
+mode guided(43.02168293611111, -85.78399114444444, 100)    // building_9
+mode circle
+mode guided(43.021797544444446, -85.78249877222223, 100)   // building_10
+mode circle
+mode guided(43.02328071111111, -85.78221360555555, 100)    // building_11
+mode circle
+mode guided(43.02146046111111, -85.78221360555555, 100)    // building_12
 mode circle
 
-// Return to home (take-off point 1)
+// Return to launch and land
 mode rtl
 disarm
 ```
 
-Notes:
-1. The flight starts by arming and taking off to 100m
-2. The drone then sequentially visits each building coordinate at 100m altitude
-3. At each building, it enters circle mode to observe
-4. After completing all buildings, it returns to the original take-off point
-5. The drone disarms after landing
-
-If you want the drone to circle each building for a specific duration, you could add wait commands between the circle mode and next guided command. Also, if the take-off point should be different from building_1, you would need to adjust the initial and final coordinates accordingly.
+Note: This assumes the take-off point is the first building's location (building_1). If the take-off point is different, you would need to add an initial `mode guided` command to the actual take-off location before the first building. The flight plan visits each building in numerical order - you might want to optimize the route for efficiency depending on your priorities.

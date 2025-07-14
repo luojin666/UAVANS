@@ -5,29 +5,31 @@ arm throttle
 takeoff 100
 
 // Fly to and circle around each building at 100m height
-mode guided(43.24841005833333 -85.46762859444443 100)
+mode guided(43.24841005833333, -85.46762859444443, 100)
 mode circle
-mode guided(43.24874853055555 -85.46679210555556 100)
+mode guided(43.248680836111106, -85.46679210555556, 100)
 mode circle
-mode guided(43.24851159999999 -85.46679210555556 100)
+mode guided(43.248504830555554, -85.46679210555556, 100)
 mode circle
-mode guided(43.24994672222222 -85.46302790555555 100)
+mode guided(43.248816225, -85.46658298333332, 100)
 mode circle
-mode guided(43.248951613888885 -85.46299938888889 100)
+mode guided(43.24993318333333, -85.46308493888888, 100)
 mode circle
-mode guided(43.24791588888888 -85.46299938888889 100)
+mode guided(43.248951613888885, -85.46308493888888, 100)
 mode circle
-mode guided(43.24851159999999 -85.46230548333334 100)
+mode guided(43.24792942777778, -85.46298988333334, 100)
 mode circle
-mode guided(43.249662405555554 -85.4603473388889 100)
+mode guided(43.24847098333333, -85.46227696666666, 100)
 mode circle
-mode guided(43.249662405555554 -85.45996711666668 100)
+mode guided(43.249662405555554, -85.46037585555555, 100)
 mode circle
-mode guided(43.24837621111111 -85.45922568333333 100)
+mode guided(43.249662405555554, -85.46004316111112, 100)
 mode circle
-mode guided(43.24986548888889 -85.45913062777778 100)
+mode guided(43.24841005833333, -85.45914013333334, 100)
 mode circle
-mode guided(43.24994672222222 -85.45850326111112 100)
+mode guided(43.24987902777777, -85.45909260555555, 100)
+mode circle
+mode guided(43.24993318333333, -85.45847474444444, 100)
 mode circle
 
 // Return to home and land
@@ -36,8 +38,8 @@ disarm
 ```
 
 Notes:
-1. The flight plan assumes the first coordinate in the list is the take-off point (home position)
-2. Each building is visited in sequence, with the quadcopter circling each one at 100m altitude
-3. After completing all building circles, the quadcopter returns to home and lands
-4. The `mode circle` command is used to circle each building at the current position
-5. All movements maintain the 100m altitude as specified in the mission
+1. The flight plan assumes the quadcopter starts at a home position (take-off point) which isn't specified in the input.
+2. Each building is visited in the order they were listed in the input.
+3. The quadcopter maintains 100m altitude throughout the mission.
+4. After circling each building, the quadcopter returns to the take-off point and lands.
+5. You may want to optimize the order of buildings to visit for the most efficient flight path.

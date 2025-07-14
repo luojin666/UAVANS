@@ -1,22 +1,31 @@
-Here's a flight plan in pseudo-language based on your mission description and the identified objects:
+Here's a flight plan in pseudo-language based on your mission description and the identified buildings:
 
 ```
-// Arm and take off to 100m
 arm throttle
 takeoff 100
 
-// Fly to each building and circle around it
-mode guided 42.801159075 -85.67221990277778 100
+// Fly to building_1 and circle it
+mode guided(42.80111180555555, -85.67221990277778, 100)
 mode circle
-mode guided 42.798606525 -85.67085790277778 100
+
+// Fly to building_2 and circle it
+mode guided(42.798606525, -85.67085790277778, 100)
 mode circle
-mode guided 42.80121309722222 -85.67075386111111 100
+
+// Fly to building_3 and circle it
+mode guided(42.8001259, -85.67076331944445, 100)
 mode circle
-mode guided 42.80021368611111 -85.67066873611111 100
+
+// Fly to building_4 and circle it
+mode guided(42.80121309722222, -85.67074440277779, 100)
 mode circle
-mode guided 42.80223951944444 -85.67064981944445 100
+
+// Fly to building_5 and circle it
+mode guided(42.80223951944444, -85.67066873611111, 100)
 mode circle
-mode guided 42.80121309722222 -85.66985531944445 100
+
+// Fly to building_6 and circle it
+mode guided(42.80121309722222, -85.66985531944445, 100)
 mode circle
 
 // Return to home and land
@@ -24,10 +33,10 @@ mode rtl
 disarm
 ```
 
-Notes:
-1. The flight plan assumes the first waypoint is the take-off point (home position)
-2. Each building is visited in sequence at 100m altitude
-3. The quadcopter circles each building before proceeding to the next
-4. After completing all building inspections, it returns to home and lands
-5. You may want to adjust the order of buildings for optimal flight path efficiency
-6. The coordinates are used exactly as provided in the input
+This plan:
+1. Arms the quadcopter and takes off to 100m
+2. Sequentially visits each building at the specified coordinates
+3. Circles each building at 100m altitude
+4. After visiting all buildings, returns to home and disarms
+
+Note: The order of buildings visited could be optimized for shortest path if desired. Also, you might want to add delay commands between movements if needed for stabilization.

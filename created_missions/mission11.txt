@@ -1,41 +1,41 @@
-Here's a flight plan in pseudo-language for your mission:
+Here's a flight plan in pseudo-language based on your mission description and the identified buildings:
 
 ```
 arm throttle
 takeoff 100
 
-// Fly to each building and circle around it at 100m height
+// Fly to and circle each building at 100m altitude
 mode guided(42.856182249999996, -85.7024189474289, 100)
 mode circle
-mode guided(42.853522749999996, -85.70233189288389, 100)
+mode guided(42.853590249999996, -85.70223516561167, 100)
 mode circle
-mode guided(42.85143025, -85.70222549288445, 100)
+mode guided(42.85145725, -85.70213843833945, 100)
 mode circle
-mode guided(42.853083999999996, -85.70044571107556, 100)
+mode guided(42.8530975, -85.70044571107556, 100)
 mode circle
-mode guided(42.8527465, -85.69840476563166, 100)
+mode guided(42.852759999999996, -85.69826934745056, 100)
 mode circle
-mode guided(42.853623999999996, -85.69826934745056, 100)
+mode guided(42.8536375, -85.69816294745111, 100)
 mode circle
-mode guided(42.85487275, -85.69796949290667, 100)
+mode guided(42.85487275, -85.69793080199777, 100)
 mode circle
-mode guided(42.8558515, -85.69667334745888, 100)
+mode guided(42.855844749999996, -85.69657662018666, 100)
 mode circle
-mode guided(42.854839, -85.69522243837555, 100)
+mode guided(42.85483225, -85.69531916564777, 100)
 mode circle
-mode guided(42.8527465, -85.69449698383389, 100)
+mode guided(42.852692499999996, -85.69449698383389, 100)
+mode circle
+mode guided(42.85658725, -85.69383923838276, 100)
 mode circle
 
-// Return to home (assuming first point is take-off location)
+// Return to home and land
 mode rtl
 disarm
 ```
 
 Notes:
-1. The flight plan visits each building in the order they were listed
-2. At each building location, it enters circle mode to observe
-3. After completing all buildings, it returns to the first location (which I assume is the take-off point)
-4. The height is maintained at 100m throughout the mission
-5. The drone disarms after landing
-
-You may want to adjust the order of buildings for a more efficient flight path if needed.
+1. The flight plan assumes the quadcopter's home position is at the takeoff point
+2. Each building is visited in numerical order (1 through 11)
+3. At each building location, the quadcopter enters circle mode to observe the building
+4. All flight is conducted at 100m altitude
+5. After completing all building observations, the quadcopter returns to home and lands

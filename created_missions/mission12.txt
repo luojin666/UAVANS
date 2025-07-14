@@ -1,52 +1,119 @@
-Here's a flight plan in pseudo-language based on the mission description and the identified objects (buildings/take-off points):
+Here's a flight plan in pseudo-language for the quadcopter to fly around each building at 100m and return to the take-off point:
 
 ```
 // Arm and take off to 100m
 arm throttle
 takeoff 100
 
-// Fly to and circle each building at 100m height
-mode guided(42.80986018888889, -85.34530384444444, 100)
+// Fly to and circle each building (assuming take-off point is building_1's coordinates)
+mode guided 42.81231475 -85.34757526944445 100  // building_1
 mode circle
-mode guided(42.81040941388889, -85.34516246944445, 100)
+mode guided 42.812233383333336 -85.34719826944445 100  // building_2
 mode circle
-mode guided(42.81142649722222, -85.34438019444444, 100)
+mode guided 42.81231475 -85.34624634444444 100  // building_3
 mode circle
-mode guided(42.81104678611111, -85.34438019444444, 100)
+mode guided 42.80986018888889 -85.34530384444444 100  // building_4
 mode circle
-mode guided(42.80974491944444, -85.34438019444444, 100)
+mode guided 42.81040263333333 -85.34521901944444 100  // building_5
 mode circle
-mode guided(42.80886344722222, -85.34436134444444, 100)
+mode guided 42.81148752222222 -85.34446501944444 100  // building_6
 mode circle
-mode guided(42.81063995277778, -85.34417284444444, 100)
+mode guided 42.811080688888886 -85.34446501944444 100  // building_7
 mode circle
-mode guided(42.81027380277778, -85.34402204444444, 100)
+mode guided 42.80972457777778 -85.34446501944444 100  // building_8
 mode circle
-mode guided(42.812375775, -85.34378641944444, 100)
+mode guided 42.808870227777774 -85.34443674444445 100  // building_9
 mode circle
-mode guided(42.81089761388889, -85.34378641944444, 100)
+mode guided 42.81074166111111 -85.34427651944445 100  // building_10
 mode circle
-mode guided(42.810538244444444, -85.34369216944444, 100)
+mode guided 42.81026702222222 -85.34427651944445 100  // building_11
 mode circle
-mode guided(42.81244358055555, -85.34356021944444, 100)
+mode guided 42.810063605555555 -85.34424824444444 100  // building_12
 mode circle
-mode guided(42.81027380277778, -85.34351309444445, 100)
+mode guided 42.81238255555556 -85.34363561944444 100  // building_13
 mode circle
-mode guided(42.808985497222224, -85.34351309444445, 100)
+mode guided 42.81060605 -85.34361676944444 100  // building_14
 mode circle
-mode guided(42.81019921666667, -85.34299471944445, 100)
+mode guided 42.812653777777776 -85.34358849444445 100  // building_15
 mode circle
-mode guided(42.81027380277778, -85.34257059444444, 100)
+mode guided 42.81089083333333 -85.34358849444445 100  // building_16
+mode circle
+mode guided 42.81028058333333 -85.34358849444445 100  // building_17
+mode circle
+mode guided 42.810063605555555 -85.34358849444445 100  // building_18
+mode circle
+mode guided 42.80981950555555 -85.34358849444445 100  // building_19
+mode circle
+mode guided 42.80914145 -85.34358849444445 100  // building_20
+mode circle
+mode guided 42.81251816666666 -85.34356964444444 100  // building_21
+mode circle
+mode guided 42.81231475 -85.34356964444444 100  // building_22
+mode circle
+mode guided 42.812165577777776 -85.34356964444444 100  // building_23
+mode circle
+mode guided 42.812029966666664 -85.34356964444444 100  // building_24
+mode circle
+mode guided 42.81189435555555 -85.34356964444444 100  // building_25
+mode circle
+mode guided 42.81175874444445 -85.34356964444444 100  // building_26
+mode circle
+mode guided 42.811623133333335 -85.34356964444444 100  // building_27
+mode circle
+mode guided 42.81151464444444 -85.34356964444444 100  // building_28
+mode circle
+mode guided 42.81135191111111 -85.34356964444444 100  // building_29
+mode circle
+mode guided 42.8112163 -85.34356964444444 100  // building_30
+mode circle
+mode guided 42.811080688888886 -85.34356964444444 100  // building_31
+mode circle
+mode guided 42.810945077777774 -85.34356964444444 100  // building_32
+mode circle
+mode guided 42.81080946666667 -85.34356964444444 100  // building_33
+mode circle
+mode guided 42.810538244444444 -85.34356964444444 100  // building_34
+mode circle
+mode guided 42.81040263333333 -85.34356964444444 100  // building_35
+mode circle
+mode guided 42.81026702222222 -85.34356964444444 100  // building_36
+mode circle
+mode guided 42.81013141111111 -85.34356964444444 100  // building_37
+mode circle
+mode guided 42.809995799999996 -85.34356964444444 100  // building_38
+mode circle
+mode guided 42.80986018888889 -85.34356964444444 100  // building_39
+mode circle
+mode guided 42.80972457777778 -85.34356964444444 100  // building_40
+mode circle
+mode guided 42.80958896666667 -85.34356964444444 100  // building_41
+mode circle
+mode guided 42.809453355555554 -85.34356964444444 100  // building_42
+mode circle
+mode guided 42.80931774444444 -85.34356964444444 100  // building_43
+mode circle
+mode guided 42.80918213333333 -85.34356964444444 100  // building_44
+mode circle
+mode guided 42.80904652222222 -85.34356964444444 100  // building_45
+mode circle
+mode guided 42.80891091111111 -85.34356964444444 100  // building_46
+mode circle
+mode guided 42.8087753 -85.34356964444444 100  // building_47
+mode circle
+mode guided 42.80863968888889 -85.34356964444444 100  // building_48
+mode circle
+mode guided 42.808504077777776 -85.34356964444444 100  // building_49
 mode circle
 
-// Return to home and land
+// Return to launch point and land
 mode rtl
 disarm
 ```
 
-Notes:
-1. The flight plan assumes the first coordinate in the list is the take-off point (home position)
-2. The quadcopter will visit each building location in sequence, circle it at 100m altitude, then proceed to the next
-3. After completing all building inspections, it returns to the take-off point and lands
-4. You may want to optimize the order of building visits for efficiency (currently following the given order)
-5. The altitude is maintained at 100m throughout the building inspection phase
+Note: This assumes:
+1. The take-off point is at building_1's coordinates
+2. The quadcopter will automatically land when returning to launch
+3. Each "mode circle" command makes the drone circle the current position
+4. The flight path goes sequentially through all buildings in numerical order
+
+For a more optimized flight path, you might want to reorder the buildings based on geographical proximity.

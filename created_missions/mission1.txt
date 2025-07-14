@@ -1,45 +1,47 @@
-Here's a flight plan in pseudo-language for the quadcopter to fly around each building at 100m and return to the take-off point:
+Here¡¯s a flight plan in pseudo-language for the quadcopter to fly around each building at 100m and return to the take-off point (assuming the take-off point is the first building's coordinates for simplicity):
 
 ```
 // Arm and take off to 100m
 arm throttle
 takeoff 100
 
-// Fly to and circle each building (assuming buildingtake-off point_1 is the home location)
-mode guided 42.87946931666667 -85.41147814722223 100  // Building 1 (home)
+// Fly to and circle each building at 100m
+mode guided(42.87946931666667, -85.4114592638889, 100)  // building_1
 mode circle
-mode guided 42.87946931666667 -85.4110627138889 100   // Building 2
+mode guided(42.87946931666667, -85.4110343888889, 100)   // building_2
 mode circle
-mode guided 42.88007881666667 -85.41091164722224 100  // Building 3
+mode guided(42.88007881666667, -85.4108927638889, 100)   // building_3
 mode circle
-mode guided 42.87958444444445 -85.41082667222223 100   // Building 4
+mode guided(42.87958444444445, -85.41082667222223, 100)  // building_4
 mode circle
-mode guided 42.88028198333333 -85.41068504722223 100   // Building 5
+mode guided(42.88028198333333, -85.41068504722223, 100)  // building_5
 mode circle
-mode guided 42.87958444444445 -85.41062839722223 100   // Building 6
+mode guided(42.87958444444445, -85.41062839722223, 100)  // building_6
 mode circle
-mode guided 42.87943545555556 -85.40983529722223 100   // Building 7
+mode guided(42.8801804, -85.41054342222223, 100)         // building_7
 mode circle
-mode guided 42.87491161111111 -85.4097880888889 100    // Building 8
+mode guided(42.87943545555556, -85.40983529722223, 100)  // building_8
 mode circle
-mode guided 42.88004495555556 -85.40959925555556 100   // Building 9
+mode guided(42.87491161111111, -85.40980697222223, 100)  // building_9
 mode circle
-mode guided 42.87919842777778 -85.40931600555557 100   // Building 10
+mode guided(42.88004495555556, -85.4095898138889, 100)   // building_10
 mode circle
-mode guided 42.87980792777778 -85.40921214722223 100   // Building 11
+mode guided(42.87919842777778, -85.40930656388889, 100)  // building_11
 mode circle
-mode guided 42.87953703888889 -85.40921214722223 100   // Building 12
+mode guided(42.87980792777778, -85.40911773055556, 100)  // building_12
+mode circle
+mode guided(42.879550583333334, -85.40911773055556, 100) // building_13
 mode circle
 
-// Return to home (Building 1) and land
+// Return to home and land
 mode rtl
 disarm
 ```
 
-Note: This assumes:
-1. The first building coordinates are the home/take-off point
-2. The drone should circle each building in the order they're numbered
-3. The drone maintains 100m altitude throughout the mission
-4. The "mode circle" command makes the drone circle the current position
+### Notes:
+1. **Take-off Point**: Assumed to be the first building's coordinates (`building_1`). Adjust the `mode rtl` home point if the actual take-off location differs.
+2. **Order of Buildings**: The plan follows the order of buildings as listed. Optimize the sequence (e.g., nearest-neighbor) if efficiency is a priority.
+3. **Altitude**: All waypoints and circles are at 100m. 
+4. **Circle Duration**: The `mode circle` command assumes the quadcopter will circle the building for a predefined time/loops. Add parameters if needed (e.g., `mode circle 30` for 30 seconds). 
 
-If any assumptions are incorrect (particularly about which point is home), the plan should be adjusted accordingly.
+For a more optimized path, reorder the buildings based on proximity (e.g., using a TSP algorithm). Let me know if you'd like that!

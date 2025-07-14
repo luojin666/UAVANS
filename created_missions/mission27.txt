@@ -1,45 +1,44 @@
-Here's a flight plan in pseudo-language based on your mission description and the identified objects:
+Here's the flight plan in pseudo-language for the quadcopter to fly around each building at 100m and return to home:
 
 ```
 arm throttle
 takeoff 100
 
-// Fly to buildingtake-off point_1 and circle
-mode guided(42.76553433333334, -85.66983514166667, 100)
+// Fly to building_1 and circle
+mode guided(42.76553433333334, -85.66965553888889, 100)
 mode circle
 
-// Fly to buildingtake-off point_2 and circle
-mode guided(42.76394743055556, -85.66724508055556, 100)
+// Fly to building_2 and circle
+mode guided(42.76182705833334, -85.66724508055556, 100)
 mode circle
 
-// Fly to buildingtake-off point_3 and circle
-mode guided(42.76182705833334, -85.66719781666667, 100)
+// Fly to building_3 and circle
+mode guided(42.763920419444446, -85.66719781666667, 100)
 mode circle
 
-// Fly to buildingtake-off point_4 and circle
-mode guided(42.765297986111115, -85.66673463055557, 100)
+// Fly to building_4 and circle
+mode guided(42.76531149166667, -85.66672517777778, 100)
 mode circle
 
-// Fly to buildingtake-off point_5 and circle
+// Fly to building_5 and circle
 mode guided(42.76256986388889, -85.6661674638889, 100)
 mode circle
 
-// Fly to buildingtake-off point_6 and circle
-mode guided(42.76182705833334, -85.6653167138889, 100)
+// Fly to building_6 and circle
+mode guided(42.76182705833334, -85.6654017888889, 100)
 mode circle
 
-// Fly to buildingtake-off point_7 and circle
-mode guided(42.76641894722223, -85.66410675833333, 100)
+// Fly to building_7 and circle
+mode guided(42.766432452777785, -85.66410675833333, 100)
 mode circle
 
-// Return to home (assuming first point is home)
+// Return to home and land
 mode rtl
 disarm
 ```
 
-Notes:
-1. The flight plan assumes the first point (buildingtake-off point_1) is the home/take-off location
-2. Each building is visited in order, maintaining 100m altitude
-3. The quadcopter circles each building before proceeding to the next
-4. After visiting all buildings, it returns to home and lands
-5. You may want to adjust the order of buildings for optimal path efficiency
+This plan:
+1. Arms the quadcopter and takes off to 100m
+2. Sequentially visits each building's coordinates at 100m altitude
+3. At each building, enters circle mode to observe/fly around
+4. After visiting all buildings, returns to home and disarms

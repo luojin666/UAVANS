@@ -1,45 +1,36 @@
-Here's a flight plan in pseudo-language based on your mission description and the identified objects:
+Here's a flight plan in pseudo-language for the quadcopter to fly around each building at 100m and return to the take-off point:
 
 ```
+// Arm and take off
 arm throttle
 takeoff 100
 
-// Fly to building 1 and circle
-mode guided(43.13286613611111, -85.74667627777778, 100)
+// Fly to and circle each building
+mode guided(43.13286613611111, -85.74667627777778, 100)  // building_1
+mode circle
+mode guided(43.13306855277778, -85.74624790277777, 100)  // building_2
+mode circle
+mode guided(43.133270969444446, -85.7461907861111, 100)    // building_3
+mode circle
+mode guided(43.132596247222224, -85.74294465555556, 100) // building_4
+mode circle
+mode guided(43.13300108055555, -85.74229733333333, 100)   // building_5
+mode circle
+mode guided(43.13354085833333, -85.74183088055555, 100)   // building_6
+mode circle
+mode guided(43.132920113888886, -85.7418213611111, 100)   // building_7
+mode circle
+mode guided(43.13251528055555, -85.7404696, 100)          // building_8
 mode circle
 
-// Fly to building 2 and circle
-mode guided(43.13310903611111, -85.7461907861111, 100)
-mode circle
-
-// Fly to building 3 and circle
-mode guided(43.132596247222224, -85.74285898055555, 100)
-mode circle
-
-// Fly to building 4 and circle
-mode guided(43.133014575, -85.74227829444445, 100)
-mode circle
-
-// Fly to building 5 and circle
-mode guided(43.133621825, -85.74183088055555, 100)
-mode circle
-
-// Fly to building 6 and circle
-mode guided(43.133014575, -85.7418213611111, 100)
-mode circle
-
-// Fly to building 7 and circle
-mode guided(43.13250853333333, -85.74046008055555, 100)
-mode circle
-
-// Return to home and land
+// Return to launch and land
 mode rtl
 disarm
 ```
 
 Notes:
-1. The drone will maintain 100m altitude throughout all guided waypoints (as specified in the mission)
-2. Each building is visited in sequence with a circle observation
-3. The drone returns to the take-off point (home) at the end
-4. The order of buildings follows the numbering in your input (1-7)
-5. You may want to adjust the circle duration or add delays between commands depending on your specific requirements
+1. The flight plan assumes the take-off point is at the first building's coordinates (building_1)
+2. Each building is visited in numerical order
+3. The copter maintains 100m altitude throughout
+4. After circling each building, it proceeds to the next
+5. Finally returns to launch point and disarms
