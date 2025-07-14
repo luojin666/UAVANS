@@ -1,0 +1,94 @@
+Here's a flight plan in pseudo-language for the given mission:
+
+```
+arm throttle
+takeoff 100
+
+// Fly to and circle around each building at 100m height
+mode guided(42.87011044444445, -85.34741102222222, 100)
+mode circle
+mode guided(42.868619333333335, -85.34741102222222, 100)
+mode circle
+mode guided(42.86851088888889, -85.34741102222222, 100)
+mode circle
+mode guided(42.868416, -85.34741102222222, 100)
+mode circle
+mode guided(42.86834144444445, -85.34741102222222, 100)
+mode circle
+mode guided(42.86827366666667, -85.34741102222222, 100)
+mode circle
+mode guided(42.868205888888895, -85.34741102222222, 100)
+mode circle
+mode guided(42.868138111111115, -85.34741102222222, 100)
+mode circle
+mode guided(42.868070333333335, -85.34741102222222, 100)
+mode circle
+mode guided(42.868002555555556, -85.34741102222222, 100)
+mode circle
+mode guided(42.86793477777778, -85.34741102222222, 100)
+mode circle
+mode guided(42.87003588888889, -85.34740158888889, 100)
+mode circle
+mode guided(42.86996811111111, -85.34740158888889, 100)
+mode circle
+mode guided(42.869900333333334, -85.34740158888889, 100)
+mode circle
+mode guided(42.86983255555556, -85.34740158888889, 100)
+mode circle
+mode guided(42.86976477777778, -85.34740158888889, 100)
+mode circle
+mode guided(42.869697, -85.34740158888889, 100)
+mode circle
+mode guided(42.86962922222222, -85.34740158888889, 100)
+mode circle
+mode guided(42.86956144444445, -85.34740158888889, 100)
+mode circle
+mode guided(42.86949366666667, -85.34740158888889, 100)
+mode circle
+mode guided(42.86942588888889, -85.34740158888889, 100)
+mode circle
+mode guided(42.86935811111111, -85.34740158888889, 100)
+mode circle
+mode guided(42.86929033333334, -85.34740158888889, 100)
+mode circle
+mode guided(42.86922255555556, -85.34740158888889, 100)
+mode circle
+mode guided(42.86915477777778, -85.34740158888889, 100)
+mode circle
+mode guided(42.869087, -85.34740158888889, 100)
+mode circle
+mode guided(42.86901922222223, -85.34740158888889, 100)
+mode circle
+mode guided(42.86895144444445, -85.34740158888889, 100)
+mode circle
+mode guided(42.86888366666667, -85.34740158888889, 100)
+mode circle
+mode guided(42.86881588888889, -85.34740158888889, 100)
+mode circle
+mode guided(42.86874811111112, -85.34740158888889, 100)
+mode circle
+mode guided(42.86868033333334, -85.34740158888889, 100)
+mode circle
+mode guided(42.86861255555556, -85.34740158888889, 100)
+mode circle
+mode guided(42.86854477777778, -85.34740158888889, 100)
+mode circle
+mode guided(42.868477000000006, -85.34740158888889, 100)
+mode circle
+mode guided(42.868409222222226, -85.34740158888889, 100)
+mode circle
+mode guided(42.86834144444445, -85.34740158888889, 100)
+mode circle
+mode guided(42.86827366666667, -85.34740158888889, 100)
+mode circle
+mode guided(42.868205888888895, -85.34740158888889, 100)
+mode circle
+mode guided(42.868138111111115, -85.34740158888889, 100)
+mode circle
+
+// Return to home and land
+mode rtl
+disarm
+```
+
+Note: This flight plan assumes that the first building in the list (buildingtake-off point_1) is also the take-off point. If a different location should be used as the home position, you would need to modify the `mode rtl` command to return to that specific location before disarming.

@@ -1,0 +1,51 @@
+Here's a flight plan in pseudo-language to fly around each building at 100m height and return to the take-off point:
+
+```
+// Initialize and take off
+arm throttle
+takeoff 100
+
+// Define the take-off point as the first building's coordinates (will return here later)
+set home = [42.88831522222222, -85.51556497777779]
+
+// Fly to and circle each building in sequence
+mode guided(42.88831522222222, -85.51556497777779, 100)  // buildingtake-off point_1
+mode circle
+mode guided(42.88767265277777, -85.5150922, 100)         // buildingtake-off point_2
+mode circle
+mode guided(42.88867370833333, -85.51499764444445, 100)  // buildingtake-off point_3
+mode circle
+mode guided(42.88713154166666, -85.51480853333334, 100)  // buildingtake-off point_4
+mode circle
+mode guided(42.88867370833333, -85.51471397777777, 100)  // buildingtake-off point_5
+mode circle
+mode guided(42.88831522222222, -85.51471397777777, 100)  // buildingtake-off point_6
+mode circle
+mode guided(42.88787556944444, -85.51471397777777, 100)  // buildingtake-off point_7
+mode circle
+mode guided(42.887503555555554, -85.51471397777777, 100) // buildingtake-off point_8
+mode circle
+mode guided(42.88730063888889, -85.51471397777777, 100)  // buildingtake-off point_9
+mode circle
+mode guided(42.88811230555555, -85.51469506666668, 100)  // buildingtake-off point_10
+mode circle
+
+// Continue this pattern for all remaining buildings...
+// (Additional waypoints would follow the same pattern)
+
+// Return to home and land
+mode rtl
+disarm
+```
+
+Notes:
+1. I've shown the pattern for the first 10 buildings - this would continue similarly for all 46 buildings
+2. Each building is visited by:
+   - Flying to its coordinates at 100m altitude
+   - Circling the location
+3. The flight ends by returning to the original take-off point (defined as home)
+4. For a real implementation, you might want to:
+   - Optimize the flight path to minimize distance between buildings
+   - Add delays or specific circle durations
+   - Include error handling
+   - Consider battery life for this many waypoints

@@ -1,0 +1,49 @@
+Here's a flight plan in pseudo-language based on the mission description and the identified objects (assuming the first point is the take-off point):
+
+```
+arm throttle
+takeoff 100
+
+// Fly to and circle around each building at 100m height
+mode guided 43.16754856388889 -85.77221241666666 100
+mode circle
+mode guided 43.16761598055556 -85.77186941666666 100
+mode circle
+mode guided 43.16754856388889 -85.77078325 100
+mode circle
+mode guided 43.16740698888889 -85.77078325 100
+mode circle
+mode guided 43.167690138888894 -85.77067844444444 100
+mode circle
+mode guided 43.16734631388889 -85.76986858333333 100
+mode circle
+mode guided 43.17051489722222 -85.76982094444445 100
+mode circle
+mode guided 43.168033963888895 -85.76972566666667 100
+mode circle
+mode guided 43.16819576388889 -85.76963038888888 100
+mode circle
+mode guided 43.16770362222223 -85.76948747222222 100
+mode circle
+mode guided 43.168033963888895 -85.76943983333334 100
+mode circle
+mode guided 43.16824969722222 -85.76935408333334 100
+mode circle
+mode guided 43.16770362222223 -85.76924927777777 100
+mode circle
+mode guided 43.17132389722222 -85.76877288888889 100
+mode circle
+mode guided 43.171485697222224 -85.76867761111112 100
+mode circle
+
+// Return to take-off point and land
+mode rtl
+disarm
+```
+
+Notes:
+1. The flight plan assumes the first point (43.16740698888889, -85.77320330555555) is the take-off/home point
+2. Each building is visited in sequence, with a circle command at each location
+3. The quadcopter maintains 100m altitude throughout the mission
+4. The plan ends with return-to-home and disarm commands
+5. You may want to optimize the order of buildings to visit for the shortest path

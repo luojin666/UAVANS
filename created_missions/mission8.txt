@@ -1,0 +1,56 @@
+Here's a flight plan in pseudo-language based on the mission description and the identified objects (buildings/take-off points). The plan assumes the first point (`buildingtake-off point_1`) is the home/take-off location:
+
+```
+arm throttle
+takeoff 100
+
+// Fly to and circle each building at 100m height
+mode guided(42.797698075, -85.78517906111111, 100)
+mode circle
+mode guided(42.79702390833333, -85.78347456111112, 100)
+mode circle
+mode guided(42.801257674999995, -85.78338933611111, 100)
+mode circle
+mode guided(42.79695649166666, -85.78233822777779, 100)
+mode circle
+mode guided(42.797010424999996, -85.78091781111111, 100)
+mode circle
+mode guided(42.796889074999996, -85.780681075, 100)
+mode circle
+mode guided(42.79849359166666, -85.77971519166667, 100)
+mode circle
+mode guided(42.79621490833333, -85.77959208888889, 100)
+mode circle
+mode guided(42.799100341666666, -85.77945951666666, 100)
+mode circle
+mode guided(42.79857449166666, -85.779147025, 100)
+mode circle
+mode guided(42.798021675, -85.77898604444445, 100)
+mode circle
+mode guided(42.798304824999995, -85.778465225, 100)
+mode circle
+mode guided(42.79722615833333, -85.77798228333333, 100)
+mode circle
+mode guided(42.799370008333334, -85.77756562777778, 100)
+mode circle
+mode guided(42.795877825, -85.77742358611111, 100)
+mode circle
+mode guided(42.797900325, -85.77715844166667, 100)
+mode circle
+mode guided(42.79823740833333, -85.776590275, 100)
+mode circle
+
+// Return to home and land
+mode rtl
+disarm
+```
+
+Notes:
+1. The flight starts by arming and taking off to 100m
+2. It then sequentially visits each building waypoint at 100m height and circles each one
+3. The order follows the numerical order of the buildings (1 through 18)
+4. After circling all buildings, it returns to the take-off point (assumed to be the first point) and disarms
+5. The coordinates are used directly from the provided data
+6. Each `mode circle` command makes the drone circle the current position before proceeding to the next waypoint
+
+You may want to optimize the waypoint order for efficiency (shortest path) depending on your specific requirements.

@@ -1,0 +1,93 @@
+Here's a flight plan in pseudo-language based on your mission description and the identified objects:
+
+```
+// Arm and take off to 100m
+arm throttle
+takeoff 100
+
+// Fly to each building and circle around it
+mode guided 42.88799105555556 -85.52884095833333 100
+mode circle
+mode guided 42.887686680555554 -85.52884095833333 100
+mode circle
+mode guided 42.887517583333334 -85.52884095833333 100
+mode circle
+mode guided 42.887348486111115 -85.52884095833333 100
+mode circle
+mode guided 42.887213208333336 -85.52884095833333 100
+mode circle
+mode guided 42.887077930555556 -85.52884095833333 100
+mode circle
+mode guided 42.886942652777776 -85.52884095833333 100
+mode circle
+mode guided 42.886807375000004 -85.52884095833333 100
+mode circle
+mode guided 42.88673973611111 -85.52884095833333 100
+mode circle
+mode guided 42.88788959722223 -85.5288315 100
+mode circle
+mode guided 42.88775431944445 -85.5288315 100
+mode circle
+mode guided 42.88761904166667 -85.5288315 100
+mode circle
+mode guided 42.88755140277778 -85.5288315 100
+mode circle
+mode guided 42.88744994444445 -85.5288315 100
+mode circle
+mode guided 42.887382305555555 -85.5288315 100
+mode circle
+mode guided 42.88731466666667 -85.5288315 100
+mode circle
+mode guided 42.887247027777775 -85.5288315 100
+mode circle
+mode guided 42.88717938888889 -85.5288315 100
+mode circle
+mode guided 42.88711175 -85.5288315 100
+mode circle
+mode guided 42.88704411111111 -85.5288315 100
+mode circle
+mode guided 42.88697647222222 -85.5288315 100
+mode circle
+mode guided 42.88690883333334 -85.5288315 100
+mode circle
+mode guided 42.88684119444444 -85.5288315 100
+mode circle
+mode guided 42.88677355555556 -85.5288315 100
+mode circle
+mode guided 42.888058694444446 -85.52882204166666 100
+mode circle
+mode guided 42.88799105555556 -85.52882204166666 100
+mode circle
+mode guided 42.887923416666666 -85.52882204166666 100
+mode circle
+mode guided 42.88785577777778 -85.52882204166666 100
+mode circle
+mode guided 42.88778813888889 -85.52882204166666 100
+mode circle
+mode guided 42.8877205 -85.52882204166666 100
+mode circle
+mode guided 42.887652861111114 -85.52882204166666 100
+mode circle
+mode guided 42.88758522222222 -85.52882204166666 100
+mode circle
+mode guided 42.887517583333334 -85.52882204166666 100
+mode circle
+mode guided 42.88744994444445 -85.52882204166666 100
+mode circle
+mode guided 42.887382305555555 -85.52882204166666 100
+mode circle
+mode guided 42.88731466666667 -85.52882204166666 100
+mode circle
+mode guided 42.887247027777775 -85.52882204166666 100
+mode circle
+mode guided 42.88717938888889 -85.52882204166666 100
+mode circle
+mode guided 42.88711175 -85.52882204166666 100
+mode circle
+
+// Return to home and land
+mode rtl
+disarm
+```
+
+Note: I've assumed that the first building in your list (42.887348486111115, -85.53327691666667) is the take-off point (home position), so the flight plan starts by taking off and then proceeds to visit all other buildings before returning home. The quadcopter circles each building at 100m altitude before moving to the next one.

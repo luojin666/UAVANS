@@ -1,0 +1,45 @@
+Here's a flight plan in pseudo-language based on the mission description and the identified objects (assuming the first point is the take-off point):
+
+```
+// Arm and take off to 100m
+arm throttle
+takeoff 100
+
+// Fly to and circle each building at 100m height
+mode guided 42.766082 -85.65472271111112 100
+mode circle
+mode guided 42.76505515555556 -85.65472271111112 100
+mode circle
+mode guided 42.763366266666665 -85.65463766111112 100
+mode circle
+mode guided 42.765494266666664 -85.65344696111113 100
+mode circle
+mode guided 42.76654137777778 -85.65340916111113 100
+mode circle
+mode guided 42.76654137777778 -85.65198221111112 100
+mode circle
+mode guided 42.765676666666664 -85.65198221111112 100
+mode circle
+mode guided 42.76745337777778 -85.65103721111112 100
+mode circle
+mode guided 42.76532537777778 -85.65024341111112 100
+mode circle
+mode guided 42.76647382222222 -85.65010166111112 100
+mode circle
+mode guided 42.76743311111111 -85.64934566111113 100
+mode circle
+mode guided 42.76535915555555 -85.64858966111112 100
+mode circle
+mode guided 42.76647382222222 -85.64856131111112 100
+mode circle
+
+// Return to home (take-off point) and land
+mode rtl
+disarm
+```
+
+Notes:
+1. The flight plan assumes the first point (42.76657515555555, -85.65472271111112) is the take-off point.
+2. Each building is visited in sequence, with the quadcopter circling each one at 100m altitude.
+3. After completing all building inspections, the quadcopter returns to the take-off point and lands.
+4. The `mode circle` command is used to circle each building at the current position (100m altitude).
