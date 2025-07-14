@@ -1,0 +1,58 @@
+Here's a flight plan in pseudo-language for the quadcopter to fly around each building at 100m and return to the take-off point:
+
+```
+// Arm and take off
+arm throttle
+takeoff 100
+
+// Define take-off point as the first building's coordinates (assuming this is home)
+set_home 43.26341411111111 -85.63341340220997 100
+
+// Fly to and circle each building at 100m height
+mode guided(43.26356948888888 -85.63285185332226 100)
+mode circle
+mode guided(43.26387348888888 -85.63261390887833 100)
+mode circle
+mode guided(43.263299266666664 -85.63255680221178 100)
+mode circle
+mode guided(43.26313037777778 -85.6324616244342 100)
+mode circle
+mode guided(43.26356948888888 -85.63237596443439 100)
+mode circle
+mode guided(43.263299266666664 -85.6322807866568 100)
+mode circle
+mode guided(43.26313037777778 -85.63217609110147 100)
+mode circle
+mode guided(43.26356948888888 -85.63209043110166 100)
+mode circle
+mode guided(43.263333044444444 -85.62856885333134 100)
+mode circle
+mode guided(43.26316415555555 -85.62856885333134 100)
+mode circle
+mode guided(43.26356948888888 -85.62855933555359 100)
+mode circle
+mode guided(43.26316415555555 -85.62847367555376 100)
+mode circle
+mode guided(43.263333044444444 -85.62846415777601 100)
+mode circle
+mode guided(43.26356948888888 -85.6283784977762 100)
+mode circle
+mode guided(43.26316415555555 -85.6283784977762 100)
+mode circle
+mode guided(43.263333044444444 -85.62827380222086 100)
+mode circle
+mode guided(43.26316415555555 -85.62827380222086 100)
+mode circle
+
+// Return to home and land
+mode rtl
+disarm
+```
+
+Notes:
+1. I assumed the first building (buildingtake-off point_1) is the home/take-off point
+2. The flight plan visits each building in numerical order (1-18)
+3. At each building, it flies to the coordinates at 100m height and circles
+4. After completing all buildings, it returns to home and disarms
+5. You may want to optimize the order of buildings visited for shortest path
+6. The coordinates appear to be in decimal degrees (latitude, longitude) format

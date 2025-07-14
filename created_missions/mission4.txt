@@ -1,0 +1,42 @@
+Here's a flight plan in pseudo-language for your quadcopter mission:
+
+```
+arm throttle
+takeoff 100  // Lift to 100m altitude
+
+// Fly to each building and circle around it
+mode guided(43.124767222222225, -85.36998852222222, 100)  // buildingtake-off point_1
+mode circle
+mode guided(43.12383866666667, -85.36956214722221, 100)   // buildingtake-off point_2
+mode circle
+mode guided(43.123601444444446, -85.36496677222222, 100)  // buildingtake-off point_3
+mode circle
+mode guided(43.12536366666667, -85.36457829722221, 100)   // buildingtake-off point_4
+mode circle
+mode guided(43.12478755555556, -85.36457829722221, 100)   // buildingtake-off point_5
+mode circle
+mode guided(43.124516444444446, -85.36451197222222, 100)  // buildingtake-off point_6
+mode circle
+mode guided(43.12388611111111, -85.36401927222221, 100)    // buildingtake-off point_7
+mode circle
+mode guided(43.12268644444445, -85.3639245222222, 100)    // buildingtake-off point_8
+mode circle
+mode guided(43.12227977777778, -85.3639245222222, 100)    // buildingtake-off point_9
+mode circle
+mode guided(43.121805333333334, -85.3639245222222, 100)   // buildingtake-off point_10
+mode circle
+mode guided(43.12295755555556, -85.36389609722221, 100)   // buildingtake-off point_11
+mode circle
+mode guided(43.123784444444446, -85.36326127222222, 100)  // buildingtake-off point_12
+mode circle
+
+// Return to home and land
+mode rtl
+disarm
+```
+
+Note: 
+1. The flight plan assumes the take-off point is the same as the first building (buildingtake-off point_1) since it's not explicitly specified in the mission description.
+2. The quadcopter will maintain 100m altitude throughout the mission until RTL.
+3. Each "mode circle" command makes the drone circle around the current building location.
+4. The order of buildings follows the numbering in your provided list, but you may want to optimize the route for efficiency.

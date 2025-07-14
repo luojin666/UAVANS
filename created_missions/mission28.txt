@@ -1,0 +1,35 @@
+Here¡¯s a flight plan in pseudo-language for the quadcopter to fly around each building at 100m, then return to the take-off point (assumed to be the first coordinate, `buildingtake-off point_1`) and land:
+
+```plaintext
+// Arm and take off to 100m
+arm throttle
+takeoff 100
+
+// Fly to and circle each building at 100m
+mode guided(43.178017556988635, -85.57307330730427, 100)  // buildingtake-off point_2
+mode circle
+mode guided(43.17862599071239, -85.57251243620478, 100)   // buildingtake-off point_3
+mode circle
+mode guided(43.17666548204694, -85.5717044015699, 100)    // buildingtake-off point_4
+mode circle
+mode guided(43.17859218883885, -85.5716568701208, 100)    // buildingtake-off point_5
+mode circle
+mode guided(43.180011867527625, -85.57027845809662, 100)   // buildingtake-off point_6
+mode circle
+mode guided(43.17737532139133, -85.57022142035768, 100)    // buildingtake-off point_7
+mode circle
+mode guided(43.17832177385051, -85.57003129456125, 100)    // buildingtake-off point_8
+mode circle
+mode guided(43.176340984060936, -85.56984116876481, 100)   // buildingtake-off point_9
+mode circle
+
+// Return to home (take-off point) and land
+mode rtl
+disarm
+```
+
+### Notes:
+1. **Take-off point**: Assumed to be `buildingtake-off point_1` (first in the list), as it¡¯s common for "home" to be the starting location. If another point is designated as home, replace `mode rtl` with `mode guided(home_X, home_Y, 100)` before landing.
+2. **Order of buildings**: The plan visits buildings in the order they were listed. Adjust the sequence if prioritization or efficiency (e.g., shortest path) is needed.
+3. **Circle command**: `mode circle` is used to orbit the current position. Replace with `loiter` or adjust time/duration if the system requires it.
+4. **Altitude**: All guided commands use 100m as specified. Ensure this is safe for the environment.

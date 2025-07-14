@@ -1,0 +1,45 @@
+Here's a flight plan in pseudo-language for the quadcopter to fly around each building at 100m and return to the take-off point:
+
+```
+// Arm and take off to 100m
+arm throttle
+takeoff 100
+
+// Fly to and circle each building (assuming buildingtake-off point_1 is the home location)
+mode guided 42.87946931666667 -85.41147814722223 100  // Building 1 (home)
+mode circle
+mode guided 42.87946931666667 -85.4110627138889 100   // Building 2
+mode circle
+mode guided 42.88007881666667 -85.41091164722224 100  // Building 3
+mode circle
+mode guided 42.87958444444445 -85.41082667222223 100   // Building 4
+mode circle
+mode guided 42.88028198333333 -85.41068504722223 100   // Building 5
+mode circle
+mode guided 42.87958444444445 -85.41062839722223 100   // Building 6
+mode circle
+mode guided 42.87943545555556 -85.40983529722223 100   // Building 7
+mode circle
+mode guided 42.87491161111111 -85.4097880888889 100    // Building 8
+mode circle
+mode guided 42.88004495555556 -85.40959925555556 100   // Building 9
+mode circle
+mode guided 42.87919842777778 -85.40931600555557 100   // Building 10
+mode circle
+mode guided 42.87980792777778 -85.40921214722223 100   // Building 11
+mode circle
+mode guided 42.87953703888889 -85.40921214722223 100   // Building 12
+mode circle
+
+// Return to home (Building 1) and land
+mode rtl
+disarm
+```
+
+Note: This assumes:
+1. The first building coordinates are the home/take-off point
+2. The drone should circle each building in the order they're numbered
+3. The drone maintains 100m altitude throughout the mission
+4. The "mode circle" command makes the drone circle the current position
+
+If any assumptions are incorrect (particularly about which point is home), the plan should be adjusted accordingly.

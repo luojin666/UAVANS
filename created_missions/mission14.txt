@@ -1,0 +1,33 @@
+Here's a flight plan in pseudo-language based on your mission description and the identified objects:
+
+```
+// Arm and take off to 100m
+arm throttle
+takeoff 100
+
+// Fly to each building and circle around it
+mode guided 42.801159075 -85.67221990277778 100
+mode circle
+mode guided 42.798606525 -85.67085790277778 100
+mode circle
+mode guided 42.80121309722222 -85.67075386111111 100
+mode circle
+mode guided 42.80021368611111 -85.67066873611111 100
+mode circle
+mode guided 42.80223951944444 -85.67064981944445 100
+mode circle
+mode guided 42.80121309722222 -85.66985531944445 100
+mode circle
+
+// Return to home and land
+mode rtl
+disarm
+```
+
+Notes:
+1. The flight plan assumes the first waypoint is the take-off point (home position)
+2. Each building is visited in sequence at 100m altitude
+3. The quadcopter circles each building before proceeding to the next
+4. After completing all building inspections, it returns to home and lands
+5. You may want to adjust the order of buildings for optimal flight path efficiency
+6. The coordinates are used exactly as provided in the input
