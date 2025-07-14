@@ -21,7 +21,7 @@ pip install -r requirements.txt
 | 文件名                 | 作用                  |
 |---------------------|---------------------|
 | `generate_plans.py` | 主程序，包含VLM和LLM的全套流程。 |
-| `getmap.py`         | 卫星地图获取，有bug，评估中。    |
+| `getmap.py`         | 卫星地图获取，有bug，开发中。    |
 | `config.py`         | Prompt存于此处。         |
 
 ## 快速开始
@@ -32,6 +32,11 @@ pip install -r requirements.txt
    ```bash
    python generate_plans.py
    ```
+
+## 基本介绍
+
+自然语言输入→使用VLM分割图像→输出建筑物坐标→转换经纬度→LLM推理输出飞行计划  
+30张卫星图规划速度：分割时间7分38秒，推理时间13分钟51秒，总耗时21分钟29秒
 
 ## 待办事项
 - [x] 使用deepseek作为LLM模型
