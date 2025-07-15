@@ -18,11 +18,11 @@ pip install -r requirements.txt
 
 ## 文件说明
 
-| 文件名                 | 作用                  |
-|---------------------|---------------------|
-| `generate_plans.py` | 主程序，包含VLM和LLM的全套流程。 |
-| `getmap.py`         | 卫星地图获取，有bug，开发中。    |
-| `config.py`         | Prompt存于此处。         |
+| 文件名         | 作用                  |
+|-------------|---------------------|
+| `run.py`    | 主程序，包含VLM和LLM的全套流程。 |
+| `getmap.py` | 卫星地图获取，有bug，开发中。    |
+| `config.py` | Prompt存于此处。         |
 
 ## 快速开始
 
@@ -30,7 +30,7 @@ pip install -r requirements.txt
 2. 运行系统：
 
    ```bash
-   python generate_plans.py
+   python run.py
    ```
 
 ## 基本介绍
