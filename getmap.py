@@ -16,6 +16,8 @@ from threading import Thread, Lock
 import urllib.request as ur
 import PIL.Image as pil
 import io
+import csv
+import os
 
 MAP_URLS = {
     "google": "http://mt2.google.cn/vt/lyrs={style}&hl=zh-CN&gl=CN&src=app&x={x}&y={y}&z={z}",
@@ -303,8 +305,30 @@ def getpic(x1, y1, x2, y2, z, source='google', outfile="MAP_OUT.png", style='s')
         outpic.paste(small_pic, (x * 256, y * 256))
 
     print('Pics Merged！ Exporting......')
-    outpic.save(outfile)
+    
+    # 确保data/images目录存在
+    images_dir = "data/images"
+    os.makedirs(images_dir, exist_ok=True)
+    
+    # 构建完整的输出路径
+    if not outfile.startswith(images_dir):
+        outfile = os.path.join(images_dir, outfile)
+    
+    # 如果是JPEG格式，需要转换为RGB模式
+    if outfile.lower().endswith(('.jpg', '.jpeg')):
+        # 创建白色背景
+        rgb_pic = pil.new('RGB', outpic.size, (255, 255, 255))
+        # 将RGBA图像粘贴到RGB背景上
+        rgb_pic.paste(outpic, mask=outpic.split()[-1] if outpic.mode == 'RGBA' else None)
+        rgb_pic.save(outfile)
+    else:
+        outpic.save(outfile)
+    
     print('Exported to file！')
+    
+    # 将坐标信息写入CSV文件
+    write_coordinates_to_csv(x1, y1, x2, y2, os.path.basename(outfile))
+    
     return {"LT": (pos1x, pos1y), "RT": (pos2x, pos1y), "LB": (pos1x, pos2y), "RB": (pos2x, pos2y), "z": z}
 
 
@@ -317,6 +341,31 @@ def screen_out(zb, name):
     print("右上：({0:.5f},{1:.5f})".format(*zb['RT']))
     print("左下：({0:.5f},{1:.5f})".format(*zb['LB']))
     print("右下：({0:.5f},{1:.5f})".format(*zb['RB']))
+
+
+def write_coordinates_to_csv(x1, y1, x2, y2, outfile, csv_file="data/parsed_coordinates.csv"):
+    '''
+    将坐标信息写入CSV文件
+    x1, y1: 左上角经度、纬度
+    x2, y2: 右下角经度、纬度
+    outfile: 输出图片文件名
+    csv_file: CSV文件路径
+    '''
+    # 确保data目录存在
+    os.makedirs(os.path.dirname(csv_file), exist_ok=True)
+    
+    # 提取图片文件名（去掉路径）
+    image_name = os.path.basename(outfile)
+    
+    # 写入CSV文件，覆盖原有内容
+    with open(csv_file, 'w', newline='', encoding='utf-8') as f:
+        writer = csv.writer(f)
+        # 写入表头
+        writer.writerow(['Image', 'NW Corner Lat', 'NW Corner Long', 'SE Corner Lat', 'SE Corner Long'])
+        # 写入坐标数据（注意：NW是左上角，SE是右下角）
+        writer.writerow([image_name, y1, x1, y2, x2])
+    
+    print(f"坐标信息已写入 {csv_file}")
 
 
 def file_out(zb, file, target="keep", output="file"):
@@ -353,6 +402,5 @@ def file_out(zb, file, target="keep", output="file"):
 
 
 if __name__ == '__main__':
-    x = getpic(109.27305, 32.869698, 109.30000, 32.860000,
-               17, source='amap', style='s', outfile="map.png")
-    file_out(x, "zb17.txt", "wgs")
+    x = getpic(121.505, 31.200, 121.510, 31.195,
+               17, source='amap', style='s', outfile="1.jpg")

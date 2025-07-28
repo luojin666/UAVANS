@@ -40,7 +40,23 @@ Example output:
 """
 
 step_3_template = """
-Given the mission description: "{command}" and the following identified objects: {objects}, generate a flight plan in pseudo-language.
+Generate a flight plan for: "{command}"
+
+Targets: {objects}
+
+CRITICAL REQUIREMENT: Use NEAREST NEIGHBOR algorithm to minimize total travel distance.
+
+OPTIMIZATION ALGORITHM:
+1. Calculate distances between all points using coordinates
+2. Start from takeoff point
+3. Always visit the CLOSEST unvisited target next
+4. Continue until all targets visited
+5. Return to takeoff point
+
+DISTANCE CALCULATION:
+- Use Euclidean distance: sqrt((lat2-lat1)² + (lon2-lon1)²)
+- Always choose the target with minimum distance from current position
+- Avoid any backtracking or unnecessary detours
 
 Available commands:
 - arm throttle: arm the copter
@@ -50,13 +66,16 @@ Available commands:
 - mode circle: circle and observe at the current position
 - mode guided(X Y Z): fly to the specified location
 
-Example output:
+OUTPUT FORMAT:
 arm throttle
-mode guided 43.237763722222226 -85.79224314444444 100
-mode guided 43.237765234234234 -85.79224314235235 100
+takeoff 100
+mode guided [lat] [lon] 100
 mode circle
+[repeat for each target in optimized order]
 mode rtl
 disarm
+
+IMPORTANT: Prioritize distance minimization. Visit targets in order of increasing distance from the previous position.
 """
 
 # Default mission command

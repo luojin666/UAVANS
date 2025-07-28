@@ -1,9 +1,3 @@
-"""
-视觉语言模型 (VLM) 执行模块
-
-该模块处理 Molmo VLM 模型在卫星图像中识别物体的执行。
-"""
-
 from transformers import AutoModelForCausalLM, AutoProcessor, GenerationConfig
 from PIL import Image
 import os
@@ -43,7 +37,7 @@ class VLMRunner:
         """
         try:
             if not torch.cuda.is_available():
-                raise RuntimeError("CUDA 不可用。此模型需要 GPU 加速。")
+                logger.warning("CUDA 不可用，模型将使用 CPU 加速。")
 
             logger.info(f"正在加载模型: {self.model_name}")
 
@@ -89,9 +83,12 @@ class VLMRunner:
             if self.processor is None or self.model is None:
                 self.load_model()
 
+            # 加载并确保图像是 RGB 格式
+            image = Image.open(image_path).convert('RGB')
+
             # 处理图像和文本
             inputs = self.processor.process(
-                images=[Image.open(image_path)],
+                images=[image],
                 text=query
             )
 
