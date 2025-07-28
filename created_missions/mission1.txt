@@ -1,0 +1,74 @@
+arm throttle
+takeoff 100
+mode guided 31.19648 121.00253 100
+mode circle
+mode guided 31.19616 121.002485 100
+mode circle
+mode guided 31.19585 121.00243499999999 100
+mode circle
+mode guided 31.19588 121.00337999999999 100
+mode circle
+mode guided 31.19649 121.003495 100
+mode circle
+mode guided 31.197375 121.00336 100
+mode circle
+mode guided 31.19764 121.00332999999999 100
+mode circle
+mode guided 31.197915 121.003325 100
+mode circle
+mode guided 31.19818 121.003345 100
+mode circle
+mode guided 31.198035 121.003805 100
+mode circle
+mode guided 31.19784 121.003805 100
+mode circle
+mode guided 31.197655 121.00381 100
+mode circle
+mode guided 31.197455 121.00381 100
+mode circle
+mode guided 31.19803 121.00457 100
+mode circle
+mode guided 31.199469999999998 121.00439 100
+mode circle
+mode guided 31.19936 121.003605 100
+mode circle
+mode guided 31.1993 121.002935 100
+mode circle
+mode guided 31.198525 121.00205 100
+mode circle
+mode guided 31.19858 121.00167 100
+mode circle
+mode guided 31.199144999999998 121.00158499999999 100
+mode circle
+mode guided 31.199545 121.00098 100
+mode circle
+mode guided 31.1981 121.00128 100
+mode circle
+mode guided 31.19781 121.00156 100
+mode circle
+mode guided 31.19762 121.001545 100
+mode circle
+mode guided 31.197725 121.00204 100
+mode circle
+mode guided 31.197925 121.002 100
+mode circle
+mode guided 31.19782 121.00274999999999 100
+mode circle
+mode guided 31.19681 121.00162999999999 100
+mode circle
+mode guided 31.196205 121.00153 100
+mode circle
+mode guided 31.19643 121.00084 100
+mode circle
+mode guided 31.1963 121.004505 100
+mode circle
+mode guided 31.1961 121.00467499999999 100
+mode circle
+mode guided 31.195965 121.00484499999999 100
+mode circle
+mode guided 31.195305 121.00487 100
+mode circle
+mode guided 31.19506 121.004865 100
+mode circle
+mode rtl
+disarm

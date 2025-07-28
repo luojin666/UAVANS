@@ -402,5 +402,5 @@ def file_out(zb, file, target="keep", output="file"):
 
 
 if __name__ == '__main__':
-    x = getpic(121.505, 31.200, 121.510, 31.195,
+    x = getpic(121.000, 31.200, 121.005, 31.195,
                17, source='amap', style='s', outfile="1.jpg")

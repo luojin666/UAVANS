@@ -84,7 +84,7 @@ def find_objects(json_input: str, example_objects: str) -> Tuple[str, List[Dict[
                     save=False,  # 不自动保存可视化结果
                     save_txt=False,
                     save_conf=False,
-                    imgsz=512,
+                    imgsz=768,
                     device=0
                 )
 

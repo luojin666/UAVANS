@@ -4,84 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18b6ae5e-72f9-4789-bb3c-ae306d90e532" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/UAVANS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/UAVANS.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="18b6ae5e-72f9-4789-bb3c-ae306d90e532" name="更改" comment="0.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission11.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission12.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission13.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission14.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission15.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission16.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission17.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission18.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission19.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission20.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission21.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission22.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission23.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission24.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission25.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission26.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission27.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission28.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission29.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission30.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/created_missions/mission9.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/created_missions/mission1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/created_missions/mission1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/images/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/images/1.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/parsed_coordinates.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/parsed_coordinates.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/generate_plans.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate_plans.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/getmap.py" beforeDir="false" afterPath="$PROJECT_DIR$/getmap.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified17.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified18.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified19.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified20.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified21.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified22.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified23.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified24.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified25.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified26.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified27.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified28.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified29.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified30.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_new_data/identified9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identified_points.txt" beforeDir="false" afterPath="$PROJECT_DIR$/identified_points.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main2.py" beforeDir="false" afterPath="$PROJECT_DIR$/main2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zb17.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/identified_new_data/flight_path.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/identified_new_data/flight_path.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identified_new_data/identified1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/identified_new_data/identified1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/predict.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_vlm.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_optimized_prompt.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_single_image.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_yolo_integration.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +32,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -118,30 +60,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.draw_circles.executor": "Run",
-    "Python.generate_plans.executor": "Run",
-    "Python.getmap.executor": "Run",
-    "Python.main2.executor": "Run",
-    "Python.predict.executor": "Run",
-    "Python.test_yolo_integration.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "E:/project/UAVANS",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.draw_circles.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_plans.executor&quot;: &quot;Run&quot;,
+    &quot;Python.getmap.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.predict.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_yolo_integration.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/project/UAVANS&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\project\UAVANS\data\images" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.generate_plans">
+  <component name="RunManager" selected="Python.predict">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -282,9 +224,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.predict" />
         <item itemvalue="Python.generate_plans" />
         <item itemvalue="Python.getmap" />
-        <item itemvalue="Python.predict" />
         <item itemvalue="Python.test_yolo_integration" />
         <item itemvalue="Python.main2" />
       </list>
@@ -305,6 +247,39 @@
       <option name="presentableId" value="Default" />
       <updated>1752484997208</updated>
     </task>
+    <task id="LOCAL-00001" summary="0.1">
+      <option name="closed" value="true" />
+      <created>1753696799344</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1753696799344</updated>
+    </task>
+    <task id="LOCAL-00002" summary="0.1">
+      <option name="closed" value="true" />
+      <created>1753696849193</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1753696849193</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1" />
+    <MESSAGE value="0.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.1" />
   </component>
 </project>
